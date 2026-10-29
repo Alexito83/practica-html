@@ -1,35 +1,87 @@
-/* En celular, la cuadrícula tendrá una sola columna (1fr) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+.header {
+  background: #2a2a3c;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  margin-bottom: 1rem;
+}
+
+/* Botones de Filtro */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap; /* Permite que los botones se acomoden en celular */
+}
+
+.btn {
+  background: #313244;
+  color: #cdd6f4;
+  border: 2px solid transparent;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover, .btn.active {
+  border-color: #ffffff;
+  transform: scale(1.05);
+}
+
+.btn-turquesa.active { background-color: #00cec9; color: #112b3c; }
+.btn-morado.active { background-color: #a29bfe; color: #2a1b3d; }
+.btn-naranja.active { background-color: #ff7675; color: #3b2318; }
+
+/* Contenedor Responsive */
 .container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Tarjetas y Colores */
 .card {
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.8rem;
+  border-radius: 12px;
+  transition: all 0.4s ease;
 }
 
-.card h2 {
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
+/* Clase para ocultar elementos mediante JS */
+.card.hide {
+  display: none;
 }
 
-/* -------------------------------------------------------------
-   2. ESTILOS PARA COMPUTADORA O PANTALLAS GRANDES (768px o más)
-   ------------------------------------------------------------- */
+.card-1 { background: #112b3c; border-left: 6px solid #00cec9; }
+.card-1 h2 { color: #00cec9; }
+
+.card-2 { background: #2a1b3d; border-left: 6px solid #a29bfe; }
+.card-2 h2 { color: #a29bfe; }
+
+.card-3 { background: #3b2318; border-left: 6px solid #ff7675; }
+.card-3 h2 { color: #ff7675; }
+
+/* Media Query para escritorio */
 @media (min-width: 768px) {
-  /* En pantallas más grandes, el contenido pasa a 3 columnas horizontales */
   .container {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .header h1 {
-    font-size: 2.5rem;
   }
 }

@@ -2,31 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <!-- El tag viewport es esencial para que la pantalla del celular se escale correctamente -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo de Diseño Responsive</title>
+  <title>Diseño Responsive Interactivos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header class="header">
-    <h1>Mi Sitio Responsive</h1>
+    <h1>Galería Interactiva</h1>
+    <!-- Botones de filtro -->
+    <div class="filters">
+      <button class="btn active" data-filter="todos">Todos</button>
+      <button class="btn btn-turquesa" data-filter="turquesa">Turquesa</button>
+      <button class="btn btn-morado" data-filter="morado">Morado</button>
+      <button class="btn btn-naranja" data-filter="naranja">Naranja</button>
+    </div>
   </header>
 
   <main class="container">
-    <div class="card">
+    <div class="card card-1" data-category="turquesa">
       <h2>Tarjeta 1</h2>
-      <p>Contenido explicativo de la primera tarjeta adaptada al dispositivo.</p>
+      <p>Contenido turquesa interactivo.</p>
     </div>
-    <div class="card">
+    <div class="card card-2" data-category="morado">
       <h2>Tarjeta 2</h2>
-      <p>Contenido explicativo de la segunda tarjeta adaptada al dispositivo.</p>
+      <p>Contenido morado interactivo.</p>
     </div>
-    <div class="card">
+    <div class="card card-3" data-category="naranja">
       <h2>Tarjeta 3</h2>
-      <p>Contenido explicativo de la tercera tarjeta adaptada al dispositivo.</p>
+      <p>Contenido naranja interactivo.</p>
     </div>
   </main>
 
+  <!-- Vinculamos el archivo JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
