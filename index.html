@@ -3,38 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diseño Responsive Interactivos</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Diseño Responsive Interactivo</title>
+  <!-- Aquí llamamos a tu archivo de estilos exacto -->
+  <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
   <header class="header">
-    <h1>Galería Interactiva</h1>
-    <!-- Botones de filtro -->
-    <div class="filters">
-      <button class="btn active" data-filter="todos">Todos</button>
-      <button class="btn btn-turquesa" data-filter="turquesa">Turquesa</button>
-      <button class="btn btn-morado" data-filter="morado">Morado</button>
-      <button class="btn btn-naranja" data-filter="naranja">Naranja</button>
-    </div>
+    <h1>Cambiador de Color Interactivo</h1>
   </header>
 
   <main class="container">
-    <div class="card card-1" data-category="turquesa">
-      <h2>Tarjeta 1</h2>
-      <p>Contenido turquesa interactivo.</p>
+    <!-- Tarjeta objetivo -->
+    <div class="card" id="miTarjeta">
+      <h2 id="tituloCard">Tarjeta Dinámica</h2>
+      <p id="textoCard">Haz clic en los botones de abajo para cambiar mis colores.</p>
     </div>
-    <div class="card card-2" data-category="morado">
-      <h2>Tarjeta 2</h2>
-      <p>Contenido morado interactivo.</p>
-    </div>
-    <div class="card card-3" data-category="naranja">
-      <h2>Tarjeta 3</h2>
-      <p>Contenido naranja interactivo.</p>
+
+    <!-- Panel de botones (responsive) -->
+    <div class="panel-botones">
+      <button class="btn btn-turquesa" onclick="cambiarColor('#112b3c', '#00cec9', '#ffffff')">Turquesa</button>
+      <button class="btn btn-morado" onclick="cambiarColor('#2a1b3d', '#a29bfe', '#ffffff')">Morado</button>
+      <button class="btn btn-naranja" onclick="cambiarColor('#3b2318', '#ff7675', '#ffffff')">Naranja</button>
+      <button class="btn btn-reset" onclick="restablecerColor()">Restablecer</button>
     </div>
   </main>
 
-  <!-- Vinculamos el archivo JavaScript -->
-  <script src="script.js"></script>
+  <!-- Aquí llamamos a tu archivo de JavaScript exacto -->
+  <script src="java.js"></script>
 </body>
 </html>

@@ -1,27 +1,22 @@
-// Espera a que el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', () => {
-  const filterButtons = document.querySelectorAll('.btn');
-  const cards = document.querySelectorAll('.card');
+// Función para cambiar los colores de fondo y texto
+function cambiarColor(colorFondo, colorTitulo, colorTexto) {
+  const tarjeta = document.getElementById('miTarjeta');
+  const titulo = document.getElementById('tituloCard');
+  const texto = document.getElementById('textoCard');
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // 1. Remover clase 'active' de todos los botones y agregarla al clickeado
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+  // Aplica los nuevos colores de manera instantánea
+  tarjeta.style.backgroundColor = colorFondo;
+  titulo.style.color = colorTitulo;
+  texto.style.color = colorTexto;
+}
 
-      // 2. Obtener la categoría a filtrar
-      const filterValue = button.getAttribute('data-filter');
+// Función para volver a los colores originales
+function restablecerColor() {
+  const tarjeta = document.getElementById('miTarjeta');
+  const titulo = document.getElementById('tituloCard');
+  const texto = document.getElementById('textoCard');
 
-      // 3. Mostrar u ocultar tarjetas según la categoría
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-
-        if (filterValue === 'todos' || filterValue === category) {
-          card.classList.remove('hide');
-        } else {
-          card.classList.add('hide');
-        }
-      });
-    });
-  });
-});
+  tarjeta.style.backgroundColor = '#334155';
+  titulo.style.color = '#ffffff';
+  texto.style.color = '#ffffff';
+}
